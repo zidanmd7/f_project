@@ -1,0 +1,74 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: darkgrey; /* grey background */
+}
+
+
+
+
+
+
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* keeps nav on top right */
+.nav {
+  display: flex;
+  gap: 14px;
+  margin-left: auto;
+  background-color: bisque;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* top button */
+.dropbtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 8px 10px;
+}
+
+/* hidden dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 160px;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 6px 0;
+  z-index: 1000;
+}
+
+/* dropdown links */
+.dropdown-content a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.dropdown-content a:hover {
+  background: #f2f2f2;
+}
+
+/* show on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
