@@ -4,7 +4,8 @@ import Landing from './Landing.jsx';
 function App() {
   return(
     <>
-      <Header></Header><Landing></Landing>
+      <Header></Header>
+        <Landing></Landing>
       <Footer></Footer>
     </>
   );

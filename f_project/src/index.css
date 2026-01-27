@@ -1,55 +1,63 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  background-color: #6C757D; /* light blue background */
-  color: white;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* --------------------
+   GLOBAL RESET
+-------------------- */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+}
+
+/* --------------------
+   HEADER & NAV
+-------------------- */
 h1 {
-  font-family: "Californian FB", cursive  ;
+  font-family: "Californian FB", cursive;
   color: #CED4DA;
+  margin: 0;
 }
 
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px ;
+  flex-wrap: wrap;
   background-color: #343A40;
-  border-bottom: 5px solid #CED4DA;
+  padding: 0.5rem 1rem;
 }
 
-
-nav{
+nav {
   display: flex;
+  flex-wrap: wrap;
 }
+
 nav, a, .dropdown {
   color: #CED4DA;
   font-weight: bold;
 }
 
-/* dropdown container */
+/* --------------------
+   DROPDOWN
+-------------------- */
 .dropdown {
   position: relative;
-
-
 }
 
-/* top button */
 .dropbtn {
   background: transparent;
   border: none;
   cursor: pointer;
   font: inherit;
-  padding: 8px 50px;
+  padding: 0.5rem 1.5rem;
   color: #CED4DA;
 }
-.dropbtn button:hover {
-  background: #CED4DA;
-}
 
-/* hidden dropdown menu */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -62,7 +70,6 @@ nav, a, .dropdown {
   z-index: 1000;
 }
 
-/* dropdown links */
 .dropdown-content a {
   display: block;
   padding: 8px 12px;
@@ -74,37 +81,33 @@ nav, a, .dropdown {
   background: #f2f2f2;
 }
 
-/* show on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* The switch - the box around the slider */
+/* --------------------
+   SWITCH
+-------------------- */
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin-right: 10px;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -115,34 +118,107 @@ nav, a, .dropdown {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
   background-color: black;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
+/* --------------------
+   LANDING SECTION
+-------------------- */
 .landing-page-container {
   background-image: url("./assets/pictures/marcelo-leal-k7ll1hpdhFA-unsplash.jpg");
-  position: relative;
-  isolation: isolate;
-  min-height: 80vh;
-
-  background-position: center center;
+  min-height: 70vh;
+  width: 100%;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: inherit;
-  margin: 20px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-family: 'Ubuntu', cursive;
+  padding: 1rem;
+}
+
+/* Responsive title */
+.landing-title {
+  margin: 0;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  color: white;
+}
+
+/* Responsive description */
+.landing-description {
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  color: white;
+  max-width: 800px;
+  margin: 1rem 0;
+}
+
+/* --------------------
+   BUTTON
+-------------------- */
+.read-more {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin-top: 1.5rem;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  border-radius: 500px;
+  overflow: hidden;
+
+  background: #343A40;
+  color: white;
+  position: relative;
+}
+
+.read-more span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s;
+}
+
+.read-more:hover span {
+  color: white;
+}
+
+.read-more::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ADB5BD;
+  transform: skew(30deg) translateX(-120%);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.read-more:hover::before {
+  transform: skew(30deg) translateX(120%);
+}
+
+/* --------------------
+   MOBILE TWEAKS
+-------------------- */
+@media (max-width: 600px) {
+  nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
 }
