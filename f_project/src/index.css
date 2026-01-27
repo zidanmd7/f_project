@@ -1,37 +1,40 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: darkgrey; /* grey background */
+  background-color: #6C757D; /* light blue background */
+  color: white;
+  box-sizing: border-box;
 }
 
+h1 {
+  font-family: "Californian FB", cursive  ;
+  color: #CED4DA;
+}
 
-
-
-
-
-
-.header {
+header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px ;
+  background-color: #343A40;
+  border-bottom: 5px solid #CED4DA;
 }
 
-/* keeps nav on top right */
-.nav {
+
+nav{
   display: flex;
-  gap: 14px;
-  margin-left: auto;
-  background-color: bisque;
-  padding: 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
+}
+nav, a, .dropdown {
+  color: #CED4DA;
+  font-family: Calibri;
+  font-weight: bold;
 }
 
 /* dropdown container */
 .dropdown {
   position: relative;
+
+
 }
 
 /* top button */
@@ -40,7 +43,11 @@ html, body {
   border: none;
   cursor: pointer;
   font: inherit;
-  padding: 8px 10px;
+  padding: 8px 50px;
+  color: #CED4DA;
+}
+.dropbtn button:hover {
+  background: #CED4DA;
 }
 
 /* hidden dropdown menu */
@@ -50,7 +57,7 @@ html, body {
   top: 100%;
   right: 0;
   min-width: 160px;
-  background: white;
+  background: #6C757D;
   border: 1px solid #ddd;
   padding: 6px 0;
   z-index: 1000;
@@ -71,4 +78,72 @@ html, body {
 /* show on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.landing-page-container {
+  background-image: url("./assets/pictures/marcelo-leal-k7ll1hpdhFA-unsplash.jpg");
+  position: relative;
+  isolation: isolate;
+  min-height: 80vh;
+
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: inherit;
+  margin: 20px;
+
 }
