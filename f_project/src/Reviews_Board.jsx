@@ -1,12 +1,16 @@
+import Review from "./Component/review.jsx";
 
 function Reviews_Board() {
     return (
+        <div className="review-board">
+        <h1 className="testimonial-title">Testimonial</h1>
         <div className="review-grid-3">
-            <div className="review">Review 1</div>
-            <div className="review"> Review 2</div>
-            <div className="review"> Review 3</div>
+            <Review></Review>
+            <Review style="background-color= #$495057"></Review>
+            <Review></Review>
         </div>
-    )
+        </div>)
+
 }
 
 export default Reviews_Board;

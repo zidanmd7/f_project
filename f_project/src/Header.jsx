@@ -1,5 +1,5 @@
-import NavBar from './NavBar.jsx';
-import ModeChange from "./ModeChange.jsx";
+import NavBar from './Component/NavBar.jsx';
+import ModeChange from "./Component/ModeChange.jsx";
 
 function Header() {
 return (

@@ -1,4 +1,4 @@
-import { navItems } from "./assets/navigation_options.js";
+import { navItems } from "../assets/navigation_options.js";
 
 function NavBar(){
     return(
