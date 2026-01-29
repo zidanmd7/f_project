@@ -10,7 +10,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: whitesmoke;
   color: black;
 }
 
@@ -28,7 +28,7 @@ header {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  background-color: #343A40;
+  background-color: #0f1b2a;
   padding: 0.5rem 1rem;
 }
 
