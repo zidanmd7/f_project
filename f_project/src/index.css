@@ -10,7 +10,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
+  background-color: ghostwhite;
   color: black;
 }
 
@@ -29,12 +29,13 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   background-color: #0f1b2a;
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 nav, a, .dropdown {
@@ -47,6 +48,7 @@ nav, a, .dropdown {
 -------------------- */
 .dropdown {
   position: relative;
+
 }
 
 .dropbtn {
@@ -57,6 +59,8 @@ nav, a, .dropdown {
   padding: 2rem 2.5rem;
   color: #CED4DA;
   font-size: 1.2rem;
+  font-size: 1.5em;
+
 }
 
 .dropdown-content {
@@ -75,7 +79,9 @@ nav, a, .dropdown {
 
 .dropdown:hover{
   background: #212529;
+  /*
   border-radius: 50px;
+  */
 }
 
 .dropdown-content a {
@@ -98,6 +104,7 @@ nav, a, .dropdown {
 -------------------- */
 .switch {
   position: relative;
+
   display: inline-block;
   width: 60px;
   height: 34px;
@@ -116,10 +123,12 @@ nav, a, .dropdown {
   inset: 0;
   background-color: #ccc;
   transition: 0.4s;
+  border-radius: 10px;
 }
 
 .slider:before {
   position: absolute;
+  border-radius: 10px;
   content: "";
   height: 26px;
   width: 26px;
@@ -257,12 +266,12 @@ input:checked + .slider:before {
   /*
   border: 1px solid black;
   */
-  border-radius: 10px;
+  border-radius: 50px;
   /*
   font-size: clamp(1.2rem, 4vw, 2.5rem);
   */
   text-align: center;
-  background-color: #343A40;
+  background-color: #0f1b2a;
   color: white;
   font-family: 'Ubuntu', sans-serif;
   font-weight: bolder;
@@ -293,7 +302,7 @@ input:checked + .slider:before {
 }
 
 .testimonial-title {
-  color: black;
+  color: #0f1b2a;
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
