@@ -1,10 +1,10 @@
 export const navItems = [
     {
-        label: "Option 1",
+        label: "Services",
         items: [
-            { label: "Option 1A", href: "#one-a" },
-            { label: "Option 1B", href: "#one-b" },
-            { label: "Option 1C", href: "#one-c" },
+            { label: "Medical Opinion", href: "#one-a" },
+            { label: "Virtual Doctor", href: "#one-b" },
+            { label: "Arrange a meeting", href: "#one-c" },
         ],
     },
     {

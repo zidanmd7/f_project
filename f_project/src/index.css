@@ -38,7 +38,7 @@ nav {
 }
 
 nav, a, .dropdown {
-  color: #CED4DA;
+  color: white;
   font-weight: bold;
 }
 
@@ -55,7 +55,7 @@ nav, a, .dropdown {
   cursor: pointer;
   font: inherit;
   padding: 0.5rem 1.5rem;
-  color: #CED4DA;
+  color: white;
 }
 
 .dropdown-content {
@@ -64,7 +64,7 @@ nav, a, .dropdown {
   top: 100%;
   right: 0;
   min-width: 160px;
-  background: #6C757D;
+  background: #0f1b2a;
   border: 1px solid #ddd;
   padding: 6px 0;
   z-index: 1000;
@@ -78,7 +78,7 @@ nav, a, .dropdown {
 }
 
 .dropdown-content a:hover {
-  background: #f2f2f2;
+  background: #380006;
 }
 
 .dropdown:hover .dropdown-content {
