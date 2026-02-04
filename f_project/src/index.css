@@ -91,7 +91,7 @@ nav, a, .dropdown {
 }
 
 .dropdown-content a:hover {
-  background: #380006;
+  background: #800000;
 }
 
 .dropdown:hover .dropdown-content {

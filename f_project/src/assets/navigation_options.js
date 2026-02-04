@@ -2,9 +2,9 @@ export const navItems = [
     {
         label: "Services",
         items: [
-            { label: "Medical Opinion", href: "#one-a" },
-            { label: "Virtual Doctor", href: "#one-b" },
-            { label: "Arrange a meeting", href: "#one-c" },
+            { label: "Arrange a Meeting", href: "#one-a" },
+            { label: "Doctor's Oponion", href: "#one-b" },
+            { label: "Mental Health", href: "#one-c" },
         ],
     },
     {
