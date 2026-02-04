@@ -10,7 +10,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
+  background-color: ghostwhite;
   color: black;
 }
 
@@ -29,12 +29,13 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   background-color: #0f1b2a;
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 nav, a, .dropdown {
@@ -47,6 +48,7 @@ nav, a, .dropdown {
 -------------------- */
 .dropdown {
   position: relative;
+
 }
 
 .dropbtn {
@@ -54,8 +56,11 @@ nav, a, .dropdown {
   border: none;
   cursor: pointer;
   font: inherit;
-  padding: 0.5rem 1.5rem;
-  color: white;
+  padding: 2rem 2.5rem;
+  color: #CED4DA;
+  font-size: 1.2rem;
+  font-size: 1.5em;
+
 }
 
 .dropdown-content {
@@ -66,8 +71,16 @@ nav, a, .dropdown {
   min-width: 160px;
   background: #0f1b2a;
   border: 1px solid #ddd;
+  */
   padding: 6px 0;
   z-index: 1000;
+}
+
+.dropdown:hover{
+  background: #212529;
+  /*
+  border-radius: 50px;
+  */
 }
 
 .dropdown-content a {
@@ -90,6 +103,7 @@ nav, a, .dropdown {
 -------------------- */
 .switch {
   position: relative;
+
   display: inline-block;
   width: 60px;
   height: 34px;
@@ -108,10 +122,12 @@ nav, a, .dropdown {
   inset: 0;
   background-color: #ccc;
   transition: 0.4s;
+  border-radius: 10px;
 }
 
 .slider:before {
   position: absolute;
+  border-radius: 10px;
   content: "";
   height: 26px;
   width: 26px;
@@ -139,6 +155,7 @@ input:checked + .slider:before {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: 95%;
 
   display: flex;
   flex-direction: column;
@@ -222,3 +239,75 @@ input:checked + .slider:before {
     font-size: 1.5rem;
   }
 }
+.review-board {
+  justify-content: center;
+}
+
+.review-grid-3 {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  background-color: white;
+  /*
+  padding:1%;
+  */
+  gap: clamp(20px, 3vw,50px);
+  height: 600px;
+  width: 100%;
+  align-items: stretch; /* default */
+  justify-content: center;
+  margin: 10px 10px;
+}
+
+
+
+.review {
+  /*
+  border: 1px solid black;
+  */
+  border-radius: 50px;
+  /*
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  */
+  text-align: center;
+  background-color: #0f1b2a;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bolder;
+  font-size: 2em;
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  /*padding: 2rem 1rem 1rem;*/
+
+}
+
+.review p{
+  color: white;
+  text-align: left;
+  width: 90%;
+  padding-left: 50px;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.review img{
+  position: absolute;
+  top: 1.75rem;
+  left: 1.5rem;
+  width: clamp(2.5rem, 4vw, 3rem);
+  height: auto;
+  filter: invert(1);
+}
+
+.testimonial-title {
+  color: #0f1b2a;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 7em;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bolder;
+  }
+
+
