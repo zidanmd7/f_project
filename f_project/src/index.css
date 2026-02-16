@@ -12,6 +12,8 @@ html, body {
   padding: 0;
   background-color: ghostwhite;
   color: black;
+
+  overflow-x: hidden; /* no horizontal scrolling */
 }
 
 /* --------------------
