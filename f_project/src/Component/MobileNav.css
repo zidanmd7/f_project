@@ -14,7 +14,9 @@
 .desktop_nav {
     display: flex;
     gap: 14px;
+    /*
     margin-left: auto;
+    */
 }
 
 

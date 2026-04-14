@@ -26,13 +26,7 @@ export default function NavBar(){
         return () => (document.body.style.overflow = "");
     }, [menuOpen]);
     
-
-
-
-
-
-
-    return(
+        return(
         <>
         
 
