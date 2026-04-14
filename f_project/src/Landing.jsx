@@ -22,7 +22,7 @@ const slides = [
     },
     {
         image: heroImg3,
-        title: "Better Health Connections",
+        title: "Slide 3",
         description:
             "slide 3 *add more words later*",
         buttonText: "Learn More",
@@ -30,7 +30,7 @@ const slides = [
 
     {
         image: heroImg4,
-        title: "Better Health Connections",
+        title: "Slide 4",
         description:
             "slide 4 *add more words later*",
         buttonText: "Learn More",
