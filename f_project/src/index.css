@@ -1,74 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* --------------------
+   GLOBAL RESET
+-------------------- */
+:root {
+  --ns-light: #CBBD93;
+  --ns-cream: #FAE8B4;
+  --ns-taupe: #80775C;
+  --ns-olive: #574A24;
+  --ns-white: #f8f7f2;
+  --ns-text: #2f2a1d;
+  --ns-shadow: rgba(87, 74, 36, 0.18);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
-  background-color: darkgrey; /* grey background */
+  background-color: ghostwhite;
+  color: black;
+
+  overflow-x: hidden; /* no horizontal scrolling */
 }
 
+/* --------------------
+   HEADER & NAV
+-------------------- */
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  color: #CED4DA;
+  margin: 0;
+}
 
-
-
-
-
-
-.header {
+header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  flex-wrap: wrap;
+  background-color: var(--ns-olive);
+  border-bottom: 1px solid rgba(250, 232, 180, 0.18);
+  padding: 0rem 1rem;
 }
 
-/* keeps nav on top right */
-.nav {
+nav {
   display: flex;
-  gap: 14px;
-  margin-left: auto;
-  background-color: bisque;
-  padding: 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-/* dropdown container */
+nav, a, .dropdown {
+  color: #CED4DA;
+  font-weight: bold;
+}
+
+/* --------------------
+   DROPDOWN
+-------------------- */
 .dropdown {
   position: relative;
+
 }
 
-/* top button */
 .dropbtn {
   background: transparent;
   border: none;
   cursor: pointer;
   font: inherit;
-  padding: 8px 10px;
+  padding: 2rem 2.5rem;
+  color: var(--ns-white);
+  font-size: 1.2rem;
 }
 
-/* hidden dropdown menu */
 .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
   right: 0;
   min-width: 160px;
-  background: white;
-  border: 1px solid #ddd;
+  background: var(--ns-cream);
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 10px 25px var(--ns-shadow);
   padding: 6px 0;
   z-index: 1000;
 }
 
-/* dropdown links */
+.dropdown:hover{
+  background: rgba(250, 232, 180, 0.12);
+}
+
 .dropdown-content a {
   display: block;
   padding: 8px 12px;
   text-decoration: none;
-  color: inherit;
+  color: var(--ns-olive);
 }
 
 .dropdown-content a:hover {
-  background: #f2f2f2;
+  background: var(--ns-light);
+  color: var(--ns-olive);
 }
 
-/* show on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* --------------------
+   SWITCH
+-------------------- */
+.switch {
+  position: relative;
+
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-right: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: var(--ns-taupe);
+  transition: 0.4s;
+  border-radius: 10px;
+}
+
+.slider:before {
+  position: absolute;
+  border-radius: 10px;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--ns-white);
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--ns-light);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: var(--ns-olive);
+}
+
+/* --------------------
+   LANDING SECTION
+-------------------- */
+.landing-page-container {
+  overflow: hidden;
+  position: relative;
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 1rem;
+  flex-direction: column;
+}
+.landing-background {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+.landing-background.active {
+  opacity: 1;
+}
+.landing-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.landing-content {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+/* Responsive title */
+.landing-title {
+  margin: 0;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  color: var(--ns-white);
+
+}
+
+/* Responsive description */
+.landing-description {
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  color: var(--ns-white);
+  max-width: 800px;
+  margin: 1rem 0;
+}
+
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+
+  border: none;
+  background: rgba(250, 232, 180, 0.2);
+  color: var(--ns-white);
+  font-size: 2.5rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.slide-arrow:hover {
+  background: rgba(250, 232, 180, 0.34);
+}
+
+.left-arrow {
+  left: 20px;
+}
+
+.right-arrow {
+  right: 20px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 4;
+
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(250, 232, 180, 0.45);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.dot:hover {
+  transform: scale(1.15);
+}
+
+.active-dot {
+  background: var(--ns-cream);
+  transform: scale(1.2);
+}
+
+
+/* --------------------
+   BUTTON
+-------------------- */
+.read-more {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin-top: 1.5rem;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  border-radius: 500px;
+  overflow: hidden;
+
+  background: var(--ns-cream);
+  color: var(--ns-olive);
+  box-shadow: 0 10px 20px rgba(87, 74, 36, 0.18);
+  position: relative;
+}
+
+.read-more span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s;
+}
+
+.read-more:hover span {
+  color: var(--ns-white);
+}
+
+.read-more::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--ns-taupe);
+  transform: skew(30deg) translateX(-120%);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.read-more:hover::before {
+  transform: skew(30deg) translateX(120%);
+}
+
+/* --------------------
+   MOBILE TWEAKS
+-------------------- */
+@media (max-width: 600px) {
+  nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+.review-board {
+  justify-content: center;
+  background: linear-gradient(to bottom, var(--ns-white), #f3eedf)
+}
+
+.review-grid-3 {
+  width: 90%;
+  margin: 5px auto;
+  overflow: hidden;
+  /*
+  border: 1px solid #0f1b2a;
+  */
+
+}
+
+.review-track {
+  display: flex;
+  gap: 1em;
+  width: max-content;
+  height: max-content;
+  animation: scroll 5s  infinite;
+}
+
+.review {
+  /*
+  border: 1px solid black;
+  */
+  border-radius: 50px;
+  /*
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  */
+  text-align: center;
+  background: linear-gradient(180deg, var(--ns-taupe), var(--ns-olive));
+  color: var(--ns-white);
+  box-shadow: 0 20px 35px var(--ns-shadow);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bolder;
+  font-size: 2em;
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+  flex: 0 0 clamp(260px, 80vw, 340px);
+  background-color: #0f1b2a;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px grey;
+
+}
+
+
+.review p{
+  color: white;
+  text-align: left;
+  width: 90%;
+  padding-left: 20px;
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.review h4 {
+  color: white;
+  text-align: right;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+.review img{
+  position: absolute;
+  bottom: 1.75rem;
+  left: 1.5rem;
+  width: 10%
+}
+
+.testimonial-title {
+  color: var(--ns-olive);
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 0.2em;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bolder;
+  }
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333333%);
+  }
+}
+
+/* EMAIL FEATURE */
+.TitleFeature {
+  align-items: center;
+  color: Black;
+  justify-content: center;
+}
+.email-feature {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* centers the column */
+  padding-bottom: 10px;
+}
+
+/* MAIN FORM COLUMN */
+.contact-form {
+  width: 90%;
+  max-width: 1000px;
+  flex-direction: column;
+  align-items: stretch; /* THIS aligns everything left */
+  gap: 0.75rem;
+  padding-left: 10px;
+
+}
+
+.contact-form * {
+  margin-bottom: 10px;
+}
+
+/* INPUTS */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid darkslateblue;
+  border-radius: 5px;
+  padding: 0.75em;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* SINGLE-LINE INPUT HEIGHT */
+.contact-form input {
+  height: 50px;
+}
+
+/* MESSAGE AREA */
+.message-email {
+  min-height: 200px;
+  resize: vertical;
+  text-align: left;
+}
+
+/* DROP ZONE */
+#drop-zone {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  border: 1px solid #0f1b2a;
+  border-radius: 4px;
+  color: slategray;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* HIDE FILE INPUT */
+#file-input {
+  display: none;
+}
+
+/* PREVIEW LIST */
+#preview {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* PREVIEW ITEM */
+#preview li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  height: 100px;
+}
+
+/* PREVIEW IMAGE */
+#preview img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* BUTTONS */
+.email-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+}
+
+.btn1 {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+/* Border Reveal – upgraded */
+.send-email {
+  color: #0f1b2a;
+  border: 2px solid #0f1b2a;
+}
+
+/* animated fill */
+.send-email::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: BLACK;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.send-email:hover::after {
+  transform: scaleX(1);
+}
+
+/* text reaction */
+.send-email:hover {
+  color: black;
 }
