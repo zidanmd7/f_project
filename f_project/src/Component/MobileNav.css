@@ -1,3 +1,14 @@
+:root {
+    --ns-light: #A6B1E1;
+    --ns-cream: #B4869F;
+    --ns-taupe: #985F6F;
+    --ns-olive: #4E4C67;
+    --ns-white: #f8f7f2;
+    --ns-text: #2f2a1d;
+    --ns-shadow: rgba(87, 74, 36, 0.18);
+}
+
+
 /* shows the mobile nav only on phone */
 .mobile_nav {
     display: none;
@@ -38,7 +49,7 @@
 .backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(47, 42, 29, 0.45);
+    background: var(--ns-olive);
     opacity: 0;
     pointer-events: none;
     transition: opacity 200ms ease;
@@ -74,9 +85,9 @@
     overflow-x: hidden;
     box-sizing :border-box;
 
-    background: #574A24;
+    background: var(--ns-olive);
     color: #f8f7f2;
-    box-shadow: -10px 0 30px rgba(87, 74, 36, 0.3);
+
     border-left: 1px solid rgba(250, 232, 180, 0.22);
 
 }
@@ -99,7 +110,8 @@
     top: 0;
     padding: 14px 16px;
     position: sticky;
-    background: #574A24;
+    background: var(--ns-cream);
+    border-radius: 5px;
     z-index: 1;
 }
 
@@ -120,7 +132,7 @@
     cursor: pointer;
     padding: 12px 8px;
     font-weight: 700;
-    color: #FAE8B4;
+    color: white;
 
     white-space: nowrap;
     overflow: hidden;
