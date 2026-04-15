@@ -4,7 +4,41 @@ import heroImg2 from "./assets/pictures/landing_page.jpg";
 import heroImg3 from "./assets/pictures/example1.jpg";
 import heroImg4 from "./assets/pictures/example2.jpg";
 
-const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4];
+
+const slides = [
+    {
+    image: heroImg1,
+    title: "Medical Entries Exchange",
+    description:
+        "Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae.",
+    buttonText: "Read More",
+    },
+    {
+        image: heroImg2,
+        title: "Better Health Connections",
+        description:
+            "Helping providers, patients, and systems stay connected with smooth access to important medical information.",
+        buttonText: "Learn More",
+    },
+    {
+        image: heroImg3,
+        title: "Slide 3",
+        description:
+            "slide 3 *add more words later*",
+        buttonText: "Learn More",
+    },
+
+    {
+        image: heroImg4,
+        title: "Slide 4",
+        description:
+            "slide 4 *add more words later*",
+        buttonText: "Learn More",
+    },
+
+];
+
+
 
 function Landing() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,33 +48,31 @@ function Landing() {
     };
 
     const goToPrevious = () => {
-        setCurrentIndex((prev) =>
-            prev === 0 ? heroImages.length - 1 : prev - 1
-        );
+        setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
     };
 
     const goToNext = () => {
-        setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+        setCurrentIndex((prev) => (prev + 1) % slides.length);
     };
 
     useEffect(() => {
         const interval = setInterval(() => {
-            goToNext();
-        }, 10000);
+            setCurrentIndex((prev) => (prev + 1) % slides.length);
+        }, 50000);
 
         return () => clearInterval(interval);
     }, []);
 
+    const currentSlide = slides[currentIndex];
+
     return (
         <div className="landing-page-container">
-            {heroImages.map((image, index) => (
+            {slides.map((slide, index) => (
                 <div
                     key={index}
-                    className={`landing-background ${
-                        index === currentIndex ? "active" : ""
-                    }`}
-                    style={{ backgroundImage: `url(${image})` }}
-                />
+                    className={`landing-background ${index === currentIndex ? "active" : ""}`}
+                    style={{ backgroundImage: `url(${slide.image})` }}
+                ></div>
             ))}
 
             <div className="landing-overlay"></div>
@@ -54,18 +86,15 @@ function Landing() {
             </button>
 
             <div className="landing-content">
-                <h2 className="landing-title">Medical Entries Exchange</h2>
-                <h3 className="landing-description">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur
-                    adipiscing elit quisque faucibus ex sapien vitae.
-                </h3>
+                <h2 className="landing-title">{currentSlide.title}</h2>
+                <h3 className="landing-description">{currentSlide.description}</h3>
                 <button className="read-more">
-                    <span>Read More</span>
+                    <span>{currentSlide.buttonText}</span>
                 </button>
             </div>
 
             <div className="slider-dots">
-                {heroImages.map((_, index) => (
+                {slides.map((_, index) => (
                     <button
                         key={index}
                         className={`dot ${index === currentIndex ? "active-dot" : ""}`}
