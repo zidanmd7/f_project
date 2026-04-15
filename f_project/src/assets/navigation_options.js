@@ -8,24 +8,18 @@ export const navItems = [
         ],
     },
     {
-        label: "Option 2",
+        label: "Security",
         items: [
-            { label: "Option 2A", href: "#two-a" },
-            { label: "Option 2B", href: "#two-b" },
+            { label: "Data Protection", href: "#data-protection" },
+            { label: "Access and Permissions", href: "#access-permissions" },
+            { label: "Compliance", href: "#compliance" },
         ],
     },
     {
-        label: "Option 3",
+        label: "PrescriptShare",
         items: [
-            { label: "Option 3A", href: "#three-a" },
-            { label: "Option 3B", href: "#three-b" },
+            { label: "How it Works", href: "#how-to" },
+            { label: "Share your prescription", href: "#share" },
         ],
-    },
-    {
-        label: "Option 4",
-        items: [
-            { label: "Option 4A", href: "#four-a" },
-            { label: "Option 4B", href: "#four-b" },
-        ],
-    },
+    }
 ];

@@ -4,13 +4,14 @@
    GLOBAL RESET
 -------------------- */
 :root {
-  --ns-light: #CBBD93;
-  --ns-cream: #FAE8B4;
-  --ns-taupe: #80775C;
-  --ns-olive: #574A24;
+  --ns-light /*light accent color*/: #A6B1E1;
+  --ns-cream /*light button or accent*/: #B4869F;
+  --ns-taupe /*dark  accent color*/: #985F6F;
+  --ns-olive/*Nav bar and footer colors*/: #3d3b59;
   --ns-white: #f8f7f2;
-  --ns-text: #2f2a1d;
-  --ns-shadow: rgba(87, 74, 36, 0.18);
+  --ns-text-dark: black;
+  --ns-text-bright: white;
+  --ns-shadow: rgba(87, 10, 21, 0.18);
 }
 
 *, *::before, *::after {
@@ -20,7 +21,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: ghostwhite;
   color: black;
 
   overflow-x: hidden; /* no horizontal scrolling */
@@ -40,8 +40,11 @@ header {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  background-color: var(--ns-olive);
-  border-bottom: 1px solid rgba(250, 232, 180, 0.18);
+  /*
+  background-image: linear-gradient(to bottom, var(--ns-), var(--ns-cream));
+  */
+  background: #4E4C67;
+  border-bottom: 1px inset rgba(250, 232, 180, 0.18);
   padding: 0rem 1rem;
 }
 
@@ -345,7 +348,9 @@ input:checked + .slider:before {
 }
 .review-board {
   justify-content: center;
-  background: linear-gradient(to bottom, var(--ns-white), #f3eedf)
+  /*
+  background: linear-gradient(to bottom, var(--ns-white), #B4869F)
+  */
 }
 
 .review-grid-3 {
@@ -377,10 +382,12 @@ input:checked + .slider:before {
   text-align: center;
   background: linear-gradient(180deg, var(--ns-taupe), var(--ns-olive));
   color: var(--ns-white);
+  /*
   box-shadow: 0 20px 35px var(--ns-shadow);
+  */
   font-family: 'Ubuntu', sans-serif;
   font-weight: bolder;
-  font-size: 2em;
+  font-size: 1em;
   width: 80%;
   overflow: hidden;
   position: relative;
@@ -388,7 +395,9 @@ input:checked + .slider:before {
   background-color: #0f1b2a;
   height: 300px;
   border-radius: 10px;
+  /*
   box-shadow: 10px 10px 10px grey;
+  */
 
 }
 
@@ -437,14 +446,19 @@ input:checked + .slider:before {
 /* EMAIL FEATURE */
 .TitleFeature {
   align-items: center;
+  padding-bottom: 10px;
   color: Black;
   justify-content: center;
+  text-align: center;
 }
 .email-feature {
+
+  margin-top: 1rem;
   width: 100%;
   display: flex;
   justify-content: center; /* centers the column */
   padding-bottom: 10px;
+
 }
 
 /* MAIN FORM COLUMN */
@@ -455,6 +469,7 @@ input:checked + .slider:before {
   align-items: stretch; /* THIS aligns everything left */
   gap: 0.75rem;
   padding-left: 10px;
+  background-color: #DCD6F7;
 
 }
 
@@ -467,7 +482,7 @@ input:checked + .slider:before {
 .contact-form textarea {
   width: 100%;
   border: 1px solid darkslateblue;
-  border-radius: 5px;
+  border-radius: 1px;
   padding: 0.75em;
   font-size: 1rem;
   box-sizing: border-box;
@@ -479,7 +494,7 @@ input:checked + .slider:before {
 }
 
 /* MESSAGE AREA */
-.message-email {
+.information-input {
   min-height: 200px;
   resize: vertical;
   text-align: left;
@@ -495,9 +510,10 @@ input:checked + .slider:before {
   padding: 1em;
   border: 1px solid #0f1b2a;
   border-radius: 4px;
-  color: slategray;
+  color: black;
   cursor: pointer;
   box-sizing: border-box;
+  background-color: lightgray;
 }
 
 /* HIDE FILE INPUT */
@@ -576,4 +592,28 @@ input:checked + .slider:before {
 /* text reaction */
 .send-email:hover {
   color: black;
+}
+
+.dob_field {
+  width: 30%;
+}
+.information-input-short {
+  min-width: 50px;
+}
+
+.dob-gender-div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end; /* Aligns inputs at the bottom if labels vary in height */
+  gap: 15px;            /* Adds spacing between the elements */
+  flex-wrap: wrap;      /* Ensures it looks good on smaller screens */
+}
+
+.information-input-shorter {
+  max-width: 150px;
+}
+
+form {
+  border: 1px inset darkslateblue;
+  border-top: none;
 }

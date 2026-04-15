@@ -1,10 +1,18 @@
 *{
   font-family: 'Ubuntu', sans-serif;
 }
-
+:root {
+  --ns-light: #A6B1E1;
+  --ns-cream: #B4869F;
+  --ns-taupe: #985F6F;
+  --ns-olive: #4E4C67;
+  --ns-white: #f8f7f2;
+  --ns-text: #2f2a1d;
+  --ns-shadow: rgba(87, 74, 36, 0.18);
+}
 .site-footer {
   position: relative;
-  background: #574A24;
+  background: var(--ns-olive);
   color: #f8f7f2;
   padding: 90px 60px 60px; /* extra top padding for BAR overlap */
   margin-top: 120px;
@@ -17,8 +25,8 @@
   left: 50%;
   transform: translateX(-50%);
   width: min(920px, calc(100% - 120px));
-  background: #CBBD93;
-  color: #574A24;
+  background: #B4869F;
+  color: white;
   box-shadow: 0 10px 30px rgba(87, 74, 36, 0.2);
   border-radius: 6px;
   padding: 22px 28px;
@@ -40,8 +48,8 @@
 }
 
 .footer-cta__btn {
-  background: #574A24;
-  color: #FAE8B4;
+  background: var(--ns-olive);
+  color: white;
   text-decoration: none;
   padding: 10px 18px;
   border-radius: 4px;
@@ -50,7 +58,7 @@
 
 .footer-cta__btn:hover {
   filter: brightness(1.1);
-  background: #80775C;
+  background: var(--ns-olive);
   color: #f8f7f2;
 }
 
@@ -69,7 +77,7 @@
   font-size: 14px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: #FAE8B4;
+  color: white;
   opacity: 0.85;
 }
 
@@ -82,13 +90,13 @@
 }
 
 .footer-col a:hover {
-  color: #FAE8B4;
+  color: white;
 }
 
 .footer-logo {
   font-weight: 800;
   letter-spacing: 1px;
-  color: #FAE8B4;
+  color: white;
 }
 
 .footer-copy {
@@ -111,8 +119,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #CBBD93;
-  color: #574A24;
+  background: #985F6F;
+  color: white;
   text-decoration: none;
   font-weight: 700;
   font-size: 13px;
