@@ -1,6 +1,7 @@
 import { use, useEffect, useState } from "react";
 import { navItems } from "../assets/navigation_options.js";
 import "./MobileNav.css";
+import {Link} from "react-router-dom";
 
 
 
@@ -40,9 +41,9 @@ export default function NavBar(){
 
                     <div className="dropdown-content">
                         {group.items.map((item) => (
-                            <a key={item.href} href={item.href}>
+                            <Link key={item.href} tp={item.href}>
                                 {item.label}
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </div>
