@@ -17,17 +17,15 @@
     font-size: 28px;
     cursor: pointer;
     padding: 10px 12px;
-    margin-left: auto;
+    justify-self: end;
     color: #f8f7f2;
-
 }
 
 .desktop_nav {
     display: flex;
     gap: 14px;
-    /*
-    margin-left: auto;
-    */
+    justify-self: center;
+    align-items: center;
 }
 
 
