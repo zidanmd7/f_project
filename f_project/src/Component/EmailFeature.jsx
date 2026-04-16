@@ -16,7 +16,7 @@ function EmailFeature() {
                         placeholder="List any specific questions or concerns you would like the provider to address during your visit."
                     ></textarea>
                     <div className="dob-gender-div">
-                        <label for="birthday" className="information-input-shorter">Date of Birth</label>
+                        <label className="information-input-shorter">Date of Birth</label>
                         <input type="date" className="dob_field" name="birthday"/>
                         <label htmlFor="Gender" className="information-input-short">Gender</label>
                         <select className="gender">
