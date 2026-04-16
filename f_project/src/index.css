@@ -444,10 +444,12 @@ nav, a, .dropdown {
 /* EMAIL FEATURE */
 .TitleFeature {
   align-items: center;
-  padding-bottom: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   color: Black;
   justify-content: center;
   text-align: center;
+  background-color: white;
 }
 .email-feature {
 
@@ -459,15 +461,25 @@ nav, a, .dropdown {
 
 }
 
+.email-feature-form {
+  /*
+  background: linear-gradient(180deg, var(--ns-taupe), var(--ns-olive));
+  */
+  background: white;
+
+}
+
 /* MAIN FORM COLUMN */
 .contact-form {
+
   width: 90%;
   max-width: 1000px;
   flex-direction: column;
   align-items: stretch; /* THIS aligns everything left */
   gap: 0.75rem;
   padding-left: 10px;
-  background-color: #DCD6F7;
+
+
 
 }
 
@@ -479,16 +491,21 @@ nav, a, .dropdown {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  border: 1px solid darkslateblue;
-  border-radius: 1px;
+  /*
+  border: 3px solid darkslateblue;
+  */
+  border-radius: 10px;
   padding: 0.75em;
   font-size: 1rem;
   box-sizing: border-box;
+  text-align: left;
 }
+
 
 /* SINGLE-LINE INPUT HEIGHT */
 .contact-form input {
-  height: 50px;
+  height: 75px;
+
 }
 
 /* MESSAGE AREA */
@@ -498,6 +515,11 @@ nav, a, .dropdown {
   text-align: left;
 }
 
+.gender {
+  min-height: 50px;
+  resize: vertical;
+  text-align: left;
+}
 /* DROP ZONE */
 #drop-zone {
   width: 100%;
@@ -569,6 +591,7 @@ nav, a, .dropdown {
 .send-email {
   color: #0f1b2a;
   border: 2px solid #0f1b2a;
+  border-radius: 5px;
 }
 
 /* animated fill */
@@ -593,7 +616,8 @@ nav, a, .dropdown {
 }
 
 .dob_field {
-  width: 30%;
+  width: 50px;
+  flex: none;
 }
 .information-input-short {
   min-width: 50px;
@@ -618,4 +642,14 @@ form {
 
 .logo {
   justify-self: start;
+}
+
+
+/*SECURITY AND DATA PROTECTION*/
+
+.security {
+  text-align: left;
+  margin-top: 1rem;
+  padding-left:1rem;
+
 }

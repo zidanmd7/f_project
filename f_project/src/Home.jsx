@@ -1,10 +1,13 @@
 import Landing from "./Landing.jsx";
 import Reviews_Board from "./Reviews_Board.jsx";
+import WhyChooseUs from "./Component/WhyChooseUs.jsx";
 
 function Home() {
     return (
         <>
-        <Landing></Landing><Reviews_Board></Reviews_Board>
+            <Landing />
+            <WhyChooseUs />
+            <Reviews_Board />
         </>
     )
 }

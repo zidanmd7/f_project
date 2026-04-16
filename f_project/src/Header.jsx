@@ -7,7 +7,9 @@ import SecurityPrivacy from "./Component/security-privacy.jsx";
 function Header() {
 return (
     <header className="header">
+        <Link to={'/'} className="logo-click">
         <h1 className="logo">Demo website</h1>
+      </Link>
         <NavBar></NavBar>
     </header>
 );

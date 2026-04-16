@@ -1,7 +1,9 @@
 import Feature from "./Component/EmailFeature.jsx";
+
 /*
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 */
+
 import { Link } from "react-router-dom";
 
 
@@ -17,8 +19,10 @@ function Footer() {
         </div>
 
       <Link to={'/feature'} className="footer-cta__btn" >
-          Contact us
+          Contact
+
         </Link>
+
 
       </div>
 
